@@ -1,0 +1,25 @@
+{
+    "Routes": [
+      {
+        "DownstreamPathTemplate": "/WeatherForecast",
+        "DownstreamScheme": "http",
+        "DownstreamHostAndPorts": [
+          {
+            "Host": "localhost",
+            "Port": 5014
+          }
+        ],
+        "UpstreamPathTemplate": "/api/weather-forecast",
+        "UpstreamHttpMethod": [ "Get" ],
+        "AuthenticationOptions": {
+          "AuthenticationProviderKey": "Bearer"
+        },
+        "RouteClaimsRequirement": {
+          "http///schemas.microsoft.com/ws/2008/06/identity/claims/role": "Admin"
+        }
+      }      
+    ],
+    "GlobalConfiguration": {
+      "BaseUrl": "https://localhost:7096"
+    }
+  }
